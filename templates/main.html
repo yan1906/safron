@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'static/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'static/app.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'static/foundation.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'static/foundation.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'static/custom1.css' %}">
+
+</head>
+<body> 
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-header logs">
+				<ul class="menu">
+					{% if username %}
+						<li><a href="/auth/logout/">Logout ({{username}})</a></li>
+					{% else %}
+						<li><a href="/auth/login/">Login</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+		<h1><a href="/">Safronich tv</a></h1>
+		{% block article %}{% endblock %}
+		{% block login %}{% endblock %}
+		
+	</div>
+
+
+
+	<script src="{% static 'static/foundation.min.js' %}"></script>
+	<script src="{% static 'static/jquery.js' %}"></script>
+	<script src="{% static 'static/what-input.js' %}"></script>
+	<script src="{% static 'static/foundation.js' %}"></script>
+	<script src="{% static 'static/jquery/jquery-2.1.4.min.js' %}"></script>
+	<script src="{% static 'static/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
